@@ -3,744 +3,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FREY Verlag</title>
+<title>Für Autorinnen & Autoren — FREY Verlag</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
-
 :root{
-  --black:#111111;
-  --grey-dark:#444444;
-  --grey-mid:#999999;
-  --grey-light:#E8E8E8;
-  --off-white:#FAFAF8;
+  --black:#1A1A1A;
+  --grey-dark:#4D4D4D;
+  --grey-mid:#8A8A8A;
+  --grey-border:#CCCCCC;
+  --grey-light:#EFEFEF;
+  --grey-lighter:#F6F6F6;
   --white:#FFFFFF;
-  --font: 'DM Sans', Arial, sans-serif;
+  --font: Arial, Helvetica, sans-serif;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-
 body{
   background:var(--white);
   color:var(--black);
   font-family:var(--font);
-  line-height:1.55;
+  line-height:1.6;
   overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
 }
-
 a{color:inherit;text-decoration:none;}
 
 .wrap{
-  max-width:1120px;
+  max-width:1080px;
   margin:0 auto;
-  padding:0 40px;
-}
-
-hr{
-  border:none;
-  border-top:1px solid var(--grey-light);
-  margin:0;
+  padding:0 32px;
 }
 
 /* ---------- NAV ---------- */
 .site-nav-wrap{
   position:sticky;
   top:0;
+  background:rgba(255,255,255,0.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--grey-border);
   z-index:100;
-  background:rgba(255,255,255,0.96);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--grey-light);
 }
 .site-nav{
-  max-width:1120px;
-  margin:0 auto;
-  padding:0 40px;
-  height:56px;
+  padding:14px 32px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
+  max-width:1080px;
+  margin:0 auto;
 }
 .site-nav-logo img{
-  height:22px;
+  height:24px;
   width:auto;
   display:block;
 }
 .site-nav-logo .logo-fallback{
   font-weight:700;
-  font-size:1rem;
-  display:none;
+  font-size:1.1rem;
 }
 .site-nav-links{
   display:flex;
-  gap:36px;
-  font-size:0.82rem;
+  gap:32px;
+  font-size:0.88rem;
   font-weight:500;
-  letter-spacing:0.04em;
-  text-transform:uppercase;
 }
 .site-nav-links a{
-  opacity:0.5;
-  transition:opacity 0.2s;
+  position:relative;
+  padding-bottom:3px;
 }
-.site-nav-links a:hover,
-.site-nav-links a.active{opacity:1;}
+.site-nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:0;
+  width:0;height:1.5px;
+  background:var(--black);
+  transition:width 0.25s ease;
+}
+.site-nav-links a:hover::after{width:100%;}
+.site-nav-links a.active{border-bottom:1.5px solid var(--black);}
 
 /* ---------- HERO ---------- */
 .hero{
-  padding:80px 0 72px;
-  border-bottom:1px solid var(--grey-light);
+  padding:90px 0 70px;
+  border-bottom:1px solid var(--grey-border);
 }
-.hero-logo{
-  margin-bottom:56px;
-}
-.hero-logo img{
-  max-width:400px;
-  width:100%;
-  height:auto;
-  display:block;
-}
-.hero-logo .logo-fallback{
+.hero h1{
+  font-size:clamp(2.2rem,5vw,3.4rem);
   font-weight:700;
-  font-size:3rem;
-  display:none;
+  line-height:1.1;
+  max-width:720px;
+  margin-bottom:28px;
 }
-.hero-statement{
-  font-size:clamp(2rem, 3.8vw, 3.2rem);
-  font-weight:800;
-  line-height:1.15;
-  letter-spacing:-0.02em;
-  max-width:900px;
-  color:var(--black);
-  margin-top:56px;
-  padding-top:56px;
-  border-top:1px solid var(--grey-light);
-}
-
-/* ---------- ÜBER ---------- */
-.ueber{
-  padding:80px 0;
-  border-bottom:1px solid var(--grey-light);
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:80px;
-  align-items:start;
-}
-.ueber-label{
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--grey-mid);
-  padding-top:6px;
-}
-.ueber-text p{
-  font-size:1.15rem;
-  line-height:1.65;
+.hero-intro{
+  font-size:1.1rem;
   color:var(--grey-dark);
-  max-width:640px;
+  max-width:620px;
+  line-height:1.65;
 }
 
-/* ---------- PERSON ---------- */
-.person-section{
+/* ---------- PILLARS ---------- */
+.pillars{
   padding:80px 0;
-  border-bottom:1px solid var(--grey-light);
+}
+.pillar{
   display:grid;
-  grid-template-columns:220px 1fr;
-  gap:80px;
+  grid-template-columns:200px 1fr;
+  gap:60px;
+  padding:56px 0;
+  border-bottom:1px solid var(--grey-border);
   align-items:start;
 }
-.person-label{
-  font-size:0.75rem;
+.pillar:first-child{padding-top:0;}
+.pillar:last-child{border-bottom:none;}
+.pillar-title{
+  font-size:1.6rem;
   font-weight:700;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
+  padding-top:4px;
+}
+.pillar-content p{
+  font-size:1.05rem;
+  color:var(--grey-dark);
+  max-width:600px;
+  line-height:1.65;
+}
+.pillar-content p + p{
+  margin-top:16px;
+}
+
+@media(max-width:700px){
+  .pillar{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+  .pillar-title{font-size:1.3rem;}
+}
+
+/* ---------- QUOTE ---------- */
+.quote-section{
+  background:var(--grey-lighter);
+  padding:80px 0;
+}
+.quote-placeholder{
+  max-width:680px;
+  border-left:3px solid var(--grey-border);
+  padding:24px 32px;
+}
+.quote-placeholder blockquote{
+  font-size:1.25rem;
+  line-height:1.5;
   color:var(--grey-mid);
-  padding-top:6px;
-}
-.person-inner{
-  display:grid;
-  grid-template-columns:148px 1fr;
-  gap:40px;
-  align-items:start;
-}
-.avatar{
-  width:148px;
-  height:148px;
-  border-radius:50%;
-  background:var(--grey-light);
-  overflow:hidden;
-  position:relative;
-  flex-shrink:0;
-}
-.avatar img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.person-info h3{
-  font-size:1.3rem;
-  font-weight:700;
-  margin-bottom:4px;
-  letter-spacing:-0.01em;
-}
-.person-info .role{
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--grey-mid);
+  font-style:italic;
   margin-bottom:16px;
 }
-.person-info p{
-  font-size:0.95rem;
-  color:var(--grey-dark);
-  line-height:1.65;
-  max-width:520px;
-}
-.person-info p + p{margin-top:12px;}
-
-/* ---------- BEIRAT ---------- */
-.beirat-section{
-  padding:80px 0;
-  border-bottom:1px solid var(--grey-light);
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:80px;
-  align-items:start;
-}
-.beirat-section .section-label{
-  font-size:0.75rem;
+.quote-placeholder cite{
+  font-size:0.85rem;
   font-weight:700;
-  letter-spacing:0.14em;
+  font-style:normal;
+  color:var(--grey-mid);
   text-transform:uppercase;
-  color:var(--grey-mid);
-  padding-top:6px;
-}
-.beirat-intro{
-  font-size:0.95rem;
-  color:var(--grey-dark);
-  line-height:1.65;
-  max-width:520px;
-  margin-bottom:40px;
-}
-.beirat-grid{
-  display:flex;
-  gap:40px;
-  flex-wrap:wrap;
-}
-.beirat-card{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-.beirat-avatar{
-  width:56px;
-  height:56px;
-  border-radius:50%;
-  background:var(--grey-light);
-  overflow:hidden;
-  position:relative;
-  flex-shrink:0;
-}
-.beirat-avatar.empty{
-  background:var(--grey-light);
-}
-.beirat-avatar img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.beirat-card-info h4{
-  font-size:0.88rem;
-  font-weight:700;
-  margin-bottom:2px;
-}
-.beirat-card-info p{
-  font-size:0.75rem;
-  color:var(--grey-mid);
-  line-height:1.3;
-}
-
-/* ---------- AUTORIN ---------- */
-.autorin-section{
-  padding:80px 0;
-  border-bottom:1px solid var(--grey-light);
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:80px;
-  align-items:start;
-}
-.autorin-section .section-label{
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--grey-mid);
-  padding-top:6px;
-}
-.autorin-inner{
-  display:grid;
-  grid-template-columns:148px 1fr;
-  gap:40px;
-  align-items:start;
-}
-.press-tag{
-  display:inline-block;
-  font-size:0.75rem;
-  font-style:italic;
-  color:var(--grey-mid);
-  border:1px solid var(--grey-light);
-  padding:4px 10px;
-  border-radius:2px;
-  margin-bottom:14px;
-}
-
-/* ---------- PROGRAMM ---------- */
-.programm-section{
-  padding:80px 0;
-  border-bottom:1px solid var(--grey-light);
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:80px;
-  align-items:start;
-}
-.programm-section .section-label{
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--grey-mid);
-  padding-top:6px;
-  position:sticky;
-  top:72px;
-}
-.season{
-  margin-bottom:60px;
-}
-.season:last-child{margin-bottom:0;}
-.season-title{
-  font-size:0.75rem;
-  font-weight:700;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  color:var(--grey-mid);
-  padding-bottom:16px;
-  border-bottom:1px solid var(--grey-light);
-  margin-bottom:0;
-}
-.book-entry{
-  display:grid;
-  grid-template-columns:110px 1fr;
-  gap:32px;
-  padding:28px 0;
-  border-bottom:1px solid var(--grey-light);
-  align-items:start;
-  transition:background 0.2s;
-}
-.book-entry:last-child{border-bottom:none;}
-.book-cover{
-  width:110px;
-  height:156px;
-  background:var(--off-white);
-  border:1px solid var(--grey-light);
-  border-radius:2px;
-  overflow:hidden;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:0.6rem;
   letter-spacing:0.06em;
-  color:var(--grey-mid);
-  text-transform:uppercase;
-  flex-shrink:0;
 }
-.book-cover img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+
+/* ---------- KONTAKT ---------- */
+.kontakt-section{
+  padding:80px 0;
+  border-top:1px solid var(--grey-border);
 }
-.book-meta h3{
-  font-size:1.35rem;
+.kontakt-section h2{
+  font-size:1.6rem;
   font-weight:700;
-  letter-spacing:-0.01em;
-  line-height:1.2;
-  margin-bottom:6px;
+  margin-bottom:16px;
 }
-.book-meta .author{
-  font-size:0.82rem;
-  font-weight:700;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
-  color:var(--grey-mid);
-  margin-bottom:4px;
-}
-.book-meta .subtitle{
-  font-size:0.88rem;
-  font-style:italic;
+.kontakt-section p{
+  font-size:1.05rem;
   color:var(--grey-dark);
-  margin-bottom:12px;
+  max-width:520px;
+  margin-bottom:28px;
 }
-.book-meta .desc{
-  font-size:0.9rem;
-  color:var(--grey-dark);
-  line-height:1.6;
-  max-width:500px;
-}
-.book-details{
-  margin-top:14px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-}
-.book-detail{
-  font-size:0.75rem;
-  color:var(--grey-mid);
-  letter-spacing:0.02em;
-}
-.book-detail strong{
-  color:var(--black);
-  font-weight:700;
-}
-.book-link{
+.kontakt-link{
   display:inline-block;
-  margin-top:12px;
-  font-size:0.82rem;
   font-weight:700;
-  letter-spacing:0.04em;
-  text-transform:uppercase;
-  border-bottom:1.5px solid var(--black);
-  padding-bottom:2px;
-}
-.book-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:14px;
-}
-.book-tag{
-  font-size:0.72rem;
-  letter-spacing:0.03em;
-  border:1px solid var(--grey-light);
-  padding:4px 10px;
-  border-radius:2px;
-  color:var(--grey-dark);
-}
-.more-note{
-  font-size:0.82rem;
-  color:var(--grey-mid);
-  font-style:italic;
-  margin-top:32px;
+  font-size:0.95rem;
+  border-bottom:2px solid var(--black);
+  padding-bottom:3px;
 }
 
 /* ---------- FOOTER ---------- */
 footer{
   background:var(--black);
   color:var(--white);
-  padding:64px 0 40px;
+  padding:70px 0 40px;
 }
-.footer-inner{
+.footer-grid{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  gap:60px;
-  margin-bottom:48px;
+  gap:40px;
+  margin-bottom:50px;
 }
-.footer-col h4{
-  font-size:0.72rem;
-  letter-spacing:0.14em;
+.footer-grid h4{
+  font-size:0.78rem;
+  letter-spacing:0.1em;
   text-transform:uppercase;
-  color:#666;
+  color:#CCCCCC;
   margin-bottom:14px;
   font-weight:700;
 }
-.footer-col p, .footer-col a{
-  font-size:0.88rem;
-  color:rgba(255,255,255,0.7);
-  line-height:1.7;
+.footer-grid p{
+  font-size:0.92rem;
+  color:rgba(255,255,255,0.8);
+  line-height:1.6;
 }
-.footer-logo-text{
+.footer-logo{
   font-weight:700;
-  font-size:1.3rem;
-  margin-bottom:10px;
+  font-size:1.6rem;
+  margin-bottom:8px;
 }
 .footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.1);
+  border-top:1px solid rgba(255,255,255,0.15);
   padding-top:24px;
-  font-size:0.75rem;
-  color:rgba(255,255,255,0.35);
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.45);
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
   gap:10px;
 }
-
-/* ---------- RESPONSIVE ---------- */
-@media(max-width:860px){
-  .ueber, .person-section, .beirat-section,
-  .autorin-section, .programm-section{
-    grid-template-columns:1fr;
-    gap:32px;
-  }
-  .programm-section .section-label{position:static;}
-}
-@media(max-width:600px){
-  .wrap{padding:0 20px;}
-  .site-nav{padding:0 20px;}
-  .person-inner, .autorin-inner{grid-template-columns:1fr;}
-  .footer-inner{grid-template-columns:1fr;}
-  .book-entry{grid-template-columns:80px 1fr; gap:20px;}
-  .book-cover{width:80px; height:114px;}
-  .beirat-grid{gap:24px;}
+@media(max-width:700px){
+  .footer-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <div class="site-nav-wrap">
   <div class="site-nav">
     <a href="index.html" class="site-nav-logo">
       <img src="https://github.com/piafrey/frey-assets/blob/main/FREY-Logo-nur.png?raw=true"
            alt="FREY Verlag"
            onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <span class="logo-fallback">FREY</span>
+      <span class="logo-fallback" style="display:none;">FREY</span>
     </a>
     <nav class="site-nav-links">
-      <a href="index.html" class="active">Programm</a>
-      <a href="autoren.html">Für Autor/innen</a>
+      <a href="index.html">Programm</a>
+      <a href="autoren.html" class="active">Für Autor/innen</a>
     </nav>
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-logo">
-      <img src="https://raw.githubusercontent.com/piafrey/frey-assets/refs/heads/main/FREY_Verlag-Logo-Black%20(1).svg"
-           alt="FREY Verlag"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-      <div class="logo-fallback">FREY</div>
-    </div>
-    <p class="hero-statement">Wir glauben, dass die Welt nicht einfacher wird, wenn wir sie vereinfachen. Uns interessieren Bücher, die Perspektiven verschieben und dazu einladen, die Welt nicht reflexhaft, sondern neugierig zu betrachten. Die Raum zum Staunen schaffen und die Elastizität unserer Köpfe und Herzen trainieren. Die zeigen, dass Menschen und die Welt fast immer komplexer sind, als sie zunächst erscheinen. Und dass genau darin ihre Schönheit liegt.</p>
+    <h1>Für Autorinnen<br>und Autoren</h1>
+    <p class="hero-intro">Viele Autorinnen und Autoren entwickeln ihre Themen über Jahre, bauen Reichweite auf und stehen im engen Austausch mit ihrer Community. Sie arbeiten schneller und unternehmerischer, als es das klassische Verlagsmodell lange vorgesehen hat.</p>
   </div>
 </section>
 
-<!-- GRÜNDERIN -->
-<div class="wrap">
-  <div class="person-section" style="padding-left:0;padding-right:0;max-width:100%;">
-    <div class="person-label">Gründerin</div>
-    <div class="person-inner">
-      <div class="avatar">
-        <img src="https://raw.githubusercontent.com/piafrey/frey-assets/refs/heads/main/Pia%20Frey.jpg"
-             alt="Pia Frey"
-             style="object-position:center 25%;transform:scale(1.7);"
-             onerror="this.style.display='none';">
-      </div>
-      <div class="person-info">
-        <h3>Pia Frey</h3>
-        <div class="role">Unternehmerin & Autorin</div>
-        <p>Sie studierte Philosophie und schrieb unter anderem für DIE ZEIT, den Tagesspiegel und die Titanic. Für Axel Springer arbeitete sie zwei Jahre in Berlin und im Silicon Valley an der Entwicklung neuer Audienceformate, Apps und Newsletter. 2016 gründete sie Opinary, ein Community-Tool für Digitalverlage, das unter anderem bei The Guardian, The Economist, NBC News, der FAZ und dem Spiegel zum Einsatz kam.</p>
-        <p>Nach dem Verkauf von Opinary an eine indisch-amerikanische Adtech-Gruppe verantwortete sie dort als CMO das digitale Marketing- und Eventgeschäft in mehr als zwölf Märkten. Als Autorin veröffentlichte sie bislang über zehn Bücher in Deutschland und den USA, unter anderem bei Dumont, Simon & Schuster und Kunstmann.</p>
+<section class="pillars">
+  <div class="wrap">
+
+    <div class="pillar">
+      <div class="pillar-title">Partnerschaft</div>
+      <div class="pillar-content">
+        <p>Wir finden, dass sich das auch in ihrer Beteiligung am wirtschaftlichen Erfolg ihrer Bücher widerspiegeln sollte. Deshalb beteiligen wir unsere Autorinnen und Autoren umfassend am Gewinn ihrer Bücher.</p>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- BEIRAT -->
-<div class="wrap">
-  <div class="beirat-section" style="padding-left:0;padding-right:0;">
-    <div class="section-label">Der Beirat</div>
-    <div>
-      <p class="beirat-intro">FREY wird von unabhängigen Persönlichkeiten aus dem Medien-, Kultur- und Literaturumfeld begleitet, die den Aufbau des Verlags strategisch und publizistisch unterstützen.</p>
-      <div class="beirat-grid">
-        <div class="beirat-card">
-          <div class="beirat-avatar">
-            <img src="https://github.com/piafrey/frey-assets/blob/main/Beirat%201%20Matze%20Hielscher.jpg?raw=true"
-                 alt="Matze Hielscher"
-                 style="object-position:42% 50%;"
-                 onerror="this.style.display='none';">
-          </div>
-          <div class="beirat-card-info">
-            <h4>Matze Hielscher</h4>
-            <p>Mitgründer Mit Vergnügen,<br>Podcaster & Autor</p>
-          </div>
-        </div>
-        <div class="beirat-card">
-          <div class="beirat-avatar">
-            <img src="https://github.com/piafrey/frey-assets/blob/main/beirat%202%20Anna%20von%20Muenchhause.jpg?raw=true"
-                 alt="Anna von Münchhausen"
-                 onerror="this.style.display='none';">
-          </div>
-          <div class="beirat-card-info">
-            <h4>Anna von Münchhausen</h4>
-            <p>Textchefin DIE ZEIT a.D.</p>
-          </div>
-        </div>
-        <div class="beirat-card">
-          <div class="beirat-avatar empty"></div>
-          <div class="beirat-card-info">
-            <h4>N.N.</h4>
-            <p>in Berufung</p>
-          </div>
-        </div>
-        <div class="beirat-card">
-          <div class="beirat-avatar empty"></div>
-          <div class="beirat-card-info">
-            <h4>N.N.</h4>
-            <p>in Berufung</p>
-          </div>
-        </div>
-        <div class="beirat-card">
-          <div class="beirat-avatar empty"></div>
-          <div class="beirat-card-info">
-            <h4>N.N.</h4>
-            <p>in Berufung</p>
-          </div>
-        </div>
+    <div class="pillar">
+      <div class="pillar-title">Substanz</div>
+      <div class="pillar-content">
+        <p>Gleichzeitig glauben wir an das, was ein guter Verlag leisten kann: Ideen schärfen, Manuskripte herausfordern und Bücher entwickeln, die auch in zehn Jahren noch gelesen werden. Dafür arbeiten wir mit erfahrenen Lektorinnen und Lektoren sowie einem unabhängigen Beirat zusammen.</p>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ERSTE AUTORIN -->
-<div class="wrap">
-  <div class="autorin-section" style="padding-left:0;padding-right:0;">
-    <div class="section-label">Erste Autorin</div>
-    <div class="autorin-inner">
-      <div class="avatar">
-        <img src="https://raw.githubusercontent.com/piafrey/frey-assets/refs/heads/main/Caroline%20von%20St.%20Ange%20.avif"
-             alt="Caroline von St. Ange"
-             style="object-position:center;"
-             onerror="this.style.display='none';">
-      </div>
-      <div class="person-info">
-        <div class="press-tag">„Die Mary Poppins des Lernens" — FAZ</div>
-        <h3>Caroline von St. Ange</h3>
-        <div class="role">Autorin, Lerncoach & Bildungsaktivistin</div>
-        <p>Sie zählt zu den bekanntesten Bildungsstimmen Deutschlands und erreicht über Social Media und Newsletter kontinuierlich mehr als <strong>550.000</strong> Schülerinnen und Schüler, Eltern und Lehrkräfte.</p>
-        <p>Ihr Bestseller „<em>Alles ist schwer, bevor es leicht ist</em>" (Rowohlt, 2023) machte sie weit über die Bildungscommunity hinaus bekannt. Bei FREY erscheinen ihre kommenden Veröffentlichungen rund um Lernen, Wachstum und Bildung.</p>
+    <div class="pillar">
+      <div class="pillar-title">Sichtbarkeit</div>
+      <div class="pillar-content">
+        <p>Wir glauben nicht, dass Bücher nur im Buchhandel groß werden. Wenn die beste Idee für ein Buch darin besteht, Kapitel auf Twitch vorzulesen, machen wir das. Wenn ein Buch gemeinsam mit seiner Community wachsen soll, begleiten wir es mit einem Newsletter. Wenn die Gespräche nach einem Buch weitergehen sollen, produzieren wir einen Podcast. Oder statt einer klassischen Lesung einen Buchclub auf WhatsApp.</p>
+        <p>Entscheidend ist nicht der Kanal. Entscheidend ist, dass die richtigen Menschen ein Buch entdecken – und daraus ein Gespräch wird.</p>
       </div>
     </div>
+
   </div>
-</div>
+</section>
 
-<!-- PROGRAMM -->
-<div class="wrap">
-  <div class="programm-section" style="padding-left:0;padding-right:0;">
-    <div class="section-label">Programmvorschau</div>
-    <div>
-
-      <div class="season">
-        <div class="season-title">Sommer / Herbst 2026</div>
-
-        <div class="book-entry">
-          <div class="book-cover">
-            <img src="https://github.com/piafrey/frey-assets/blob/main/Screenshot%202026-06-18%20at%2016.09.31.png?raw=true"
-                 alt="Cover So startet dein Kind gut in die Schule"
-                 onerror="this.style.display='none';">
-            Cover
-          </div>
-          <div class="book-meta">
-            <div class="author">Caroline von St. Ange</div>
-            <h3>So startet dein Kind gut in die Schule</h3>
-            <p class="desc">Ein Ratgeber mit praktischen Tipps, Methoden, Impuls-Fragen & Checklisten, um Kinder gut auf die Grundschule vorzubereiten.</p>
-            <div class="book-details">
-              <span class="book-detail"><strong>31. Juli 2026</strong></span>
-              <span class="book-detail">14,95 €</span>
-              <span class="book-detail">ISBN 978-3-9828953-0-7</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="book-entry">
-          <div class="book-cover">Cover</div>
-          <div class="book-meta">
-            <div class="author">Caroline von St. Ange & Pia Frey</div>
-            <h3>Das geht ja DOCH!</h3>
-            <p class="subtitle">Mit einem Vorwort von Saša Stanišić</p>
-            <p class="desc">Wahre <a href="https://www.instagram.com/reel/DTumeCeikbl/" target="_blank" style="text-decoration:underline;">Geschichten</a> von Menschen, die sich nicht von äußeren Zuschreibungen, Prognosen oder scheinbaren Grenzen haben definieren lassen. Keine Erfolgsbibel, sondern ein Buch über Handlungsspielräume. Die zentrale Frage: Wie viel mehr ist möglich, als wir zunächst glauben?</p>
-            <div class="book-details">
-              <span class="book-detail"><strong>1. November 2026</strong></span>
-              <span class="book-detail">20,00 €</span>
-              <span class="book-detail">ISBN 978-3-9828953-1-4</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="season">
-        <div class="season-title">Frühjahr 2027</div>
-
-        <div class="book-entry">
-          <div class="book-cover">Cover</div>
-          <div class="book-meta">
-            <div class="author">Caroline von St. Ange</div>
-            <h3>Mutmach-Kartenset</h3>
-            <p class="desc">330 Karten voller aufbauender Botschaften, die immer zur Stelle sind, wenn das Lernen schwerfällt oder die Motivation schwindet. Entstanden in Zusammenarbeit mit der Instagram Community der Autorin.</p>
-          </div>
-        </div>
-
-        <div class="book-entry">
-          <div class="book-cover">Cover</div>
-          <div class="book-meta">
-            <div class="author">Ein Flipbuch mit Peter Wittkamp</div>
-            <h3>Der Kollaps-o-Mat</h3>
-            <p class="desc">Die Apokalypse im Taschenformat: Kriege, Klima, KI: Der große Crash droht von allen Seiten. Ein kathartisches Flipbuch für apokalyptische Zeiten, mit dem sich im Handumdrehen immer neue Weltuntergänge zusammenstellen lassen – von erschreckend plausibel bis vollkommen absurd.</p>
-            <a href="https://piafrey.github.io/kollapsomat/" target="_blank" rel="noopener noreferrer" class="book-link">Hier kollabieren</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="season">
-        <div class="season-title">Herbst 2027</div>
-
-        <div class="book-entry">
-          <div class="book-cover">Cover</div>
-          <div class="book-meta">
-            <div class="author">Reihenstart</div>
-            <h3>Crashkurs mit Klassikern</h3>
-            <p class="desc">Eine Sachbuchreihe, die aktuelle Phänomene unserer Zeit mithilfe klassischer philosophischer Modelle neu betrachtet. Große Denker erklären die Gegenwart:</p>
-            <div class="book-tags">
-              <span class="book-tag">Wittgenstein erklärt LLMs</span>
-              <span class="book-tag">Heidegger erklärt KI</span>
-              <span class="book-tag">Adorno erklärt TikTok</span>
-              <span class="book-tag">Marx erklärt Plattformkapitalismus</span>
-              <span class="book-tag">Kant erklärt KI-Ethik</span>
-              <span class="book-tag">Platon erklärt Trump</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="more-note">Weitere Titel in Vorbereitung.</p>
+<section class="quote-section">
+  <div class="wrap">
+    <div class="quote-placeholder">
+      <blockquote>„[Platzhalter: Zitat von Caroline von St. Ange über die Zusammenarbeit mit FREY Verlag]"</blockquote>
+      <cite>Caroline von St. Ange — Autorin, Lerncoach & Bildungsaktivistin</cite>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FOOTER -->
+<section class="kontakt-section">
+  <div class="wrap">
+    <h2>Kontakt</h2>
+    <p>Buchideen, Manuskripte, Fragen zur Zusammenarbeit an:</p>
+    <a href="mailto:info@frey-verlag.com" class="kontakt-link">info@frey-verlag.com</a>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <div class="footer-logo-text">FREY</div>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">FREY</div>
         <p>FREY Verlag UG</p>
         <p>Forster Str. 4<br>10999 Berlin</p>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Vertrieb</h4>
         <p>Agentur Seyfarth</p>
         <p>Juliane Seyfarth-Schäfer</p>
         <p>Tel: +49 89 500 80 88 16</p>
         <p>j.seyfarth@seyfarth-agentur.de</p>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Auslieferung</h4>
         <p>D-A-CH</p>
         <p>Wird in Kürze ergänzt</p>
@@ -753,8 +328,5 @@ footer{
   </div>
 </footer>
 
-<script>
-const obs = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.style.opacity=1}),{threshold:0.1});
-</script>
 </body>
 </html>
