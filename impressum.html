@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum — FREY Verlag</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
+
+:root{
+  --black:#111111;
+  --grey-dark:#444444;
+  --grey-mid:#999999;
+  --grey-light:#E8E8E8;
+  --white:#FFFFFF;
+  --font: 'DM Sans', Arial, sans-serif;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--white);
+  color:var(--black);
+  font-family:var(--font);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+
+.wrap{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 40px;
+}
+
+/* NAV */
+.site-nav-wrap{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--grey-light);
+}
+.site-nav{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 40px;
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.site-nav-logo img{height:22px;width:auto;display:block;}
+.site-nav-logo .logo-fallback{font-weight:700;font-size:1rem;display:none;}
+.site-nav-links{
+  display:flex;
+  gap:36px;
+  font-size:0.82rem;
+  font-weight:500;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+}
+.site-nav-links a{opacity:0.5;transition:opacity 0.2s;}
+.site-nav-links a:hover,.site-nav-links a.active{opacity:1;}
+
+/* CONTENT */
+.impressum{
+  padding:80px 0 120px;
+}
+.impressum h1{
+  font-size:2.4rem;
+  font-weight:800;
+  letter-spacing:-0.02em;
+  margin-bottom:64px;
+  padding-bottom:32px;
+  border-bottom:1px solid var(--grey-light);
+}
+.block{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:80px;
+  padding:40px 0;
+  border-bottom:1px solid var(--grey-light);
+  align-items:start;
+}
+.block:last-child{border-bottom:none;}
+.block-label{
+  font-size:0.75rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--grey-mid);
+  padding-top:4px;
+}
+.block-content p{
+  font-size:1rem;
+  color:var(--grey-dark);
+  line-height:1.7;
+}
+.block-content p + p{margin-top:6px;}
+.block-content .placeholder{
+  color:var(--grey-mid);
+  font-style:italic;
+}
+
+/* FOOTER */
+footer{
+  background:var(--black);
+  color:var(--white);
+  padding:64px 0 40px;
+}
+.footer-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:60px;
+  margin-bottom:48px;
+}
+.footer-col h4{
+  font-size:0.72rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:#666;
+  margin-bottom:14px;
+  font-weight:700;
+}
+.footer-col p{
+  font-size:0.88rem;
+  color:rgba(255,255,255,0.7);
+  line-height:1.7;
+}
+.footer-logo-text{font-weight:700;font-size:1.3rem;margin-bottom:10px;}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:24px;
+  font-size:0.75rem;
+  color:rgba(255,255,255,0.35);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.footer-bottom a{color:rgba(255,255,255,0.35);}
+.footer-bottom a:hover{color:rgba(255,255,255,0.7);}
+
+@media(max-width:700px){
+  .block{grid-template-columns:1fr;gap:12px;}
+  .footer-inner{grid-template-columns:1fr;}
+  .wrap{padding:0 20px;}
+  .site-nav{padding:0 20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="site-nav-wrap">
+  <div class="site-nav">
+    <a href="index.html" class="site-nav-logo">
+      <img src="https://github.com/piafrey/frey-assets/blob/main/FREY-Logo-nur.png?raw=true"
+           alt="FREY Verlag"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <span class="logo-fallback">FREY</span>
+    </a>
+    <nav class="site-nav-links">
+      <a href="index.html">Programm</a>
+      <a href="autoren.html">Für Autor/innen</a>
+    </nav>
+  </div>
+</div>
+
+<section class="impressum">
+  <div class="wrap">
+    <h1>Impressum</h1>
+
+    <div class="block">
+      <div class="block-label">Angaben gemäß § 5 TMG</div>
+      <div class="block-content">
+        <p>FREY Verlag UG (haftungsbeschränkt)</p>
+        <p>Forster Str. 4</p>
+        <p>10999 Berlin</p>
+        <p>Deutschland</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Kontakt</div>
+      <div class="block-content">
+        <p>E-Mail: info@frey-verlag.com</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Vertretung</div>
+      <div class="block-content">
+        <p>Vertreten durch Pia Frey (Geschäftsführerin)</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Registereintrag</div>
+      <div class="block-content">
+        <p>Amtsgericht Charlottenburg</p>
+        <p>HRB 287940 B</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Umsatzsteuer</div>
+      <div class="block-content">
+        <p>Umsatzsteuer-Identifikationsnummer DE: <span class="placeholder">[bitte ergänzen]</span></p>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">Inhaltlich verantwortlich</div>
+      <div class="block-content">
+        <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</p>
+        <p>Pia Frey</p>
+        <p>Forster Str. 4, 10999 Berlin</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="footer-logo-text">FREY</div>
+        <p>FREY Verlag UG</p>
+        <p>Forster Str. 4<br>10999 Berlin</p>
+      </div>
+      <div class="footer-col">
+        <h4>Vertrieb</h4>
+        <p>Agentur Seyfarth</p>
+        <p>Juliane Seyfarth-Schäfer</p>
+        <p>Tel: +49 89 500 80 88 16</p>
+        <p>j.seyfarth@seyfarth-agentur.de</p>
+      </div>
+      <div class="footer-col">
+        <h4>Auslieferung</h4>
+        <p>D-A-CH</p>
+        <p>Wird in Kürze ergänzt</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FREY Verlag</span>
+      <a href="impressum.html">Impressum</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
