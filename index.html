@@ -90,15 +90,17 @@ hr{
 .hero{
   padding:80px 0 72px;
   border-bottom:1px solid var(--grey-light);
+  text-align:center;
 }
 .hero-logo{
   margin-bottom:56px;
 }
 .hero-logo img{
-  max-width:400px;
+  max-width:520px;
   width:100%;
   height:auto;
   display:block;
+  margin:0 auto;
 }
 .hero-logo .logo-fallback{
   font-weight:700;
@@ -106,14 +108,17 @@ hr{
   display:none;
 }
 .hero-statement{
-  font-size:clamp(2rem, 3.8vw, 3.2rem);
+  font-size:clamp(1.6rem, 3vw, 2.6rem);
   font-weight:800;
-  line-height:1.15;
+  line-height:1.18;
   letter-spacing:-0.02em;
   color:var(--black);
   margin-top:56px;
   padding-top:56px;
   border-top:1px solid var(--grey-light);
+  max-width:860px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /* ---------- ÜBER ---------- */
@@ -140,7 +145,98 @@ hr{
   max-width:640px;
 }
 
-/* ---------- PERSON ---------- */
+/* ---------- FEATURED BOOK ---------- */
+.featured{
+  padding:100px 0;
+  border-bottom:1px solid var(--grey-light);
+  background:var(--off-white);
+}
+.featured-inner{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:80px;
+  align-items:start;
+}
+.featured-cover{
+  width:100%;
+  aspect-ratio:2/3;
+  background:var(--grey-light);
+  border:1px solid var(--grey-light);
+  border-radius:3px;
+  overflow:hidden;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0.72rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--grey-mid);
+  box-shadow: 4px 4px 24px rgba(0,0,0,0.10);
+}
+.featured-cover img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.featured-label{
+  font-size:0.75rem;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--grey-mid);
+  margin-bottom:20px;
+}
+.featured-title{
+  font-size:clamp(2.2rem, 4vw, 3.4rem);
+  font-weight:800;
+  letter-spacing:-0.02em;
+  line-height:1.05;
+  margin-bottom:10px;
+}
+.featured-subtitle{
+  font-size:1.1rem;
+  font-weight:400;
+  color:var(--grey-dark);
+  margin-bottom:32px;
+  font-style:italic;
+}
+.featured-desc p{
+  font-size:0.95rem;
+  color:var(--grey-dark);
+  line-height:1.7;
+  max-width:580px;
+  margin-bottom:16px;
+}
+.featured-desc p:last-child{margin-bottom:0;}
+.featured-meta{
+  margin-top:36px;
+  padding-top:28px;
+  border-top:1px solid var(--grey-light);
+  display:flex;
+  gap:32px;
+  flex-wrap:wrap;
+}
+.featured-meta-item{
+  font-size:0.78rem;
+  color:var(--grey-mid);
+  letter-spacing:0.02em;
+}
+.featured-meta-item strong{
+  display:block;
+  font-size:0.88rem;
+  color:var(--black);
+  font-weight:700;
+  margin-bottom:2px;
+}
+@media(max-width:860px){
+  .featured-inner{grid-template-columns:1fr;gap:40px;}
+  .featured-cover{max-width:260px;}
+}
+
+
 .person-section{
   padding:80px 0;
   border-bottom:1px solid var(--grey-light);
@@ -527,7 +623,45 @@ footer{
            onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
       <div class="logo-fallback">FREY</div>
     </div>
-    <p class="hero-statement">Wir glauben, dass die Welt nicht einfacher wird, wenn wir sie vereinfachen. Uns interessieren Bücher, die Perspektiven verschieben und dazu einladen, die Welt nicht reflexhaft, sondern neugierig zu betrachten. Die Raum zum Staunen schaffen und die Elastizität unserer Köpfe und Herzen trainieren. Die zeigen, dass Menschen und die Welt fast immer komplexer sind, als sie zunächst erscheinen. Und dass genau darin ihre Schönheit liegt.</p>
+    <p class="hero-statement">Wir glauben, dass die Welt nicht einfacher wird, wenn wir sie vereinfachen. Uns interessieren Bücher, die Perspektiven verschieben und die Elastizität unserer Köpfe und Herzen trainieren. Die zeigen, dass Menschen und Dinge fast immer komplexer sind, als sie zunächst erscheinen. Und dass genau darin ihre Schönheit liegt.</p>
+  </div>
+</section>
+
+<!-- FEATURED BOOK -->
+<section class="featured">
+  <div class="wrap">
+    <div class="featured-inner">
+      <div class="featured-cover">
+        <img src="https://github.com/piafrey/frey-assets/blob/main/DOCH_Cover_Seite_1.png?raw=true" alt="Das geht ja DOCH! Cover" onerror="this.style.display='none';">
+        Cover
+      </div>
+      <div>
+        <div class="featured-label">Herbst 2026</div>
+        <h2 class="featured-title">Das geht ja DOCH!</h2>
+        <p class="featured-subtitle">Wahre Geschichten vom Trotzdem-Machen</p>
+        <div class="featured-desc">
+          <p>„Das geht ja DOCH!" ist aus einer Überzeugung entstanden: Wir sind zu viel mehr fähig, als wir zunächst glauben.</p>
+          <p>Mit dieser Überzeugung erreicht die Bildungs-Influencerin und Autorin Caroline von St. Ange (@learnlearning.withcaroline) täglich Hunderttausende Menschen. Für dieses Buch rief Caroline ihre Instagram-Community dazu auf, von den Momenten zu erzählen, in denen sie scheinbar Unmögliches geschafft haben. Hunderte Menschen schrieben ihr. Gemeinsam mit ihrer Co-Autorin Pia Frey führte Caroline Dutzende Gespräche mit den Menschen hinter den Zuschriften. Daraus entstanden die 23 Geschichten dieses Buches.</p>
+          <p>Ein Mädchen lernt nach einer Lähmung wieder laufen. Der Profi-Traum eines Nachwuchsfußballers platzt – und trotzdem findet er seinen Platz im Fußball. Eine junge Frau gilt als völlig ungeeignet für eine Flugausbildung und wird Pilotin. Ein Mädchen flieht vor dem Krieg, steht vor dem Nichts – und verwirklicht den Traum, den sie schon als Kind hatte.</p>
+          <p>Kein Buch über außergewöhnliche Talente, sondern über außergewöhnliche Beharrlichkeit. Keine Erfolgsformeln, sondern wahre Geschichten, die zeigen, wie viel größer unser Handlungsspielraum oft ist, als wir zunächst glauben.</p>
+          <p>Mit einem Vorwort von Saša Stanišić.</p>
+        </div>
+        <div class="featured-meta">
+          <div class="featured-meta-item">
+            <strong>1. November 2026</strong>
+            Erscheinungstermin
+          </div>
+          <div class="featured-meta-item">
+            <strong>21,00 €</strong>
+            Preis
+          </div>
+          <div class="featured-meta-item">
+            <strong>978-3-9828953-1-4</strong>
+            ISBN
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
