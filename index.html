@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FREY Verlag</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
 
 :root{
   --black:#111111;
@@ -14,79 +14,62 @@
   --grey-light:#E8E8E8;
   --off-white:#FAFAF8;
   --white:#FFFFFF;
-  --font: 'DM Sans', Arial, sans-serif;
+  --font:'DM Sans',Arial,sans-serif;
 }
-
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{
-  background:var(--white);
-  color:var(--black);
-  font-family:var(--font);
-  line-height:1.55;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
+body{background:var(--white);color:var(--black);font-family:var(--font);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{color:inherit;text-decoration:none;}
-
 .wrap{max-width:1120px;margin:0 auto;padding:0 40px;}
 
 /* NAV */
-.site-nav-wrap{
-  position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,0.96);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--grey-light);
-}
-.site-nav{
-  max-width:1120px;margin:0 auto;padding:0 40px;
-  height:56px;display:flex;align-items:center;
-}
+.site-nav-wrap{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--grey-light);}
+.site-nav{max-width:1120px;margin:0 auto;padding:0 40px;height:56px;display:flex;align-items:center;}
 .site-nav-logo img{height:22px;width:auto;display:block;}
 .site-nav-logo .logo-fallback{font-weight:700;font-size:1rem;display:none;}
 
 /* HERO */
-.hero{padding:80px 0 72px;border-bottom:1px solid var(--grey-light);text-align:center;}
-.hero-logo{margin-bottom:56px;}
-.hero-logo img{max-width:520px;width:100%;height:auto;display:block;margin:0 auto;}
+.hero{padding:56px 0 64px;border-bottom:1px solid var(--grey-light);text-align:center;}
+.hero-logo{margin-bottom:44px;}
+.hero-logo img{max-width:500px;width:100%;height:auto;display:block;margin:0 auto;}
 .hero-logo .logo-fallback{font-weight:700;font-size:3rem;display:none;}
+
 .hero-statement{
-  font-size:clamp(2rem,3vw,2.6rem);
-  font-weight:800;line-height:1.18;letter-spacing:-0.02em;
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(2.8rem,4.4vw,5.4rem);
+  line-height:1.42;
+  letter-spacing:-0.01em;
   color:var(--black);
-  margin-top:56px;padding-top:56px;
+  margin:44px auto 0;
+  padding-top:44px;
   border-top:1px solid var(--grey-light);
-  max-width:860px;margin-left:auto;margin-right:auto;
+  max-width:980px;
 }
+
+/* PHRASE ANIMATION */
+.ph{opacity:0;transition:opacity 0.85s ease;}
+.ph.vis{opacity:1;}
+.ph.b{color:#0602FF;font-style:italic;}
+.ann{position:relative;display:inline-block;}
+.asv{position:absolute;overflow:visible;pointer-events:none;}
+.ap{fill:none;stroke:#0602FF;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--l,500);stroke-dashoffset:var(--l,500);transition:stroke-dashoffset 1.1s cubic-bezier(0.25,0.1,0.25,1);}
+.ap.drawn{stroke-dashoffset:0;}
 
 /* SECTIONS */
-.two-col{
-  padding:80px 0;border-bottom:1px solid var(--grey-light);
-  display:grid;grid-template-columns:220px 1fr;gap:80px;align-items:start;
-}
-.section-label{
-  font-size:0.75rem;font-weight:700;letter-spacing:0.14em;
-  text-transform:uppercase;color:var(--grey-mid);padding-top:6px;
-}
+.two-col{padding:80px 0;border-bottom:1px solid var(--grey-light);display:grid;grid-template-columns:220px 1fr;gap:80px;align-items:start;}
+.section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey-mid);padding-top:6px;}
 
-/* FEATURED BOOK */
+/* FEATURED */
 .featured{padding:100px 0;border-bottom:1px solid var(--grey-light);background:var(--off-white);}
 .featured-inner{display:grid;grid-template-columns:320px 1fr;gap:80px;align-items:start;}
-.featured-cover{
-  width:100%;aspect-ratio:2/3;background:var(--grey-light);
-  border:1px solid var(--grey-light);border-radius:3px;overflow:hidden;
-  position:relative;display:flex;align-items:center;justify-content:center;
-  font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey-mid);
-  box-shadow:4px 4px 24px rgba(0,0,0,0.10);
-}
+.featured-cover{width:100%;aspect-ratio:2/3;background:var(--grey-light);border:1px solid var(--grey-light);border-radius:3px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey-mid);box-shadow:4px 4px 24px rgba(0,0,0,0.10);}
 .featured-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 .featured-label{font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey-mid);margin-bottom:20px;}
 .featured-title{font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;letter-spacing:-0.02em;line-height:1.05;margin-bottom:10px;}
 .featured-subtitle{font-size:1.1rem;font-weight:400;color:var(--grey-dark);margin-bottom:32px;font-style:italic;}
 .featured-desc p{font-size:0.95rem;color:var(--grey-dark);line-height:1.7;max-width:580px;margin-bottom:16px;}
-.featured-desc p:last-child{margin-bottom:0;}
 .featured-meta{margin-top:36px;padding-top:28px;border-top:1px solid var(--grey-light);display:flex;gap:32px;flex-wrap:wrap;}
-.featured-meta-item{font-size:0.78rem;color:var(--grey-mid);letter-spacing:0.02em;}
+.featured-meta-item{font-size:0.78rem;color:var(--grey-mid);}
 .featured-meta-item strong{display:block;font-size:0.88rem;color:var(--black);font-weight:700;margin-bottom:2px;}
 
 /* PERSON */
@@ -97,6 +80,7 @@ a{color:inherit;text-decoration:none;}
 .person-info .role{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey-mid);margin-bottom:16px;}
 .person-info p{font-size:0.95rem;color:var(--grey-dark);line-height:1.65;max-width:520px;}
 .person-info p+p{margin-top:12px;}
+.press-tag{display:inline-block;font-size:0.75rem;font-style:italic;color:var(--grey-mid);border:1px solid var(--grey-light);padding:4px 10px;border-radius:2px;margin-bottom:14px;}
 
 /* BEIRAT */
 .beirat-grid{display:flex;gap:40px;flex-wrap:wrap;}
@@ -106,9 +90,6 @@ a{color:inherit;text-decoration:none;}
 .beirat-card-info h4{font-size:1rem;font-weight:700;margin-bottom:2px;}
 .beirat-card-info p{font-size:0.82rem;color:var(--grey-mid);line-height:1.3;}
 .beirat-intro{font-size:0.95rem;color:var(--grey-dark);line-height:1.65;max-width:520px;margin-bottom:40px;}
-
-/* AUTORIN */
-.press-tag{display:inline-block;font-size:0.75rem;font-style:italic;color:var(--grey-mid);border:1px solid var(--grey-light);padding:4px 10px;border-radius:2px;margin-bottom:14px;}
 
 /* PROGRAMM */
 .programm-col{position:sticky;top:72px;}
@@ -139,18 +120,8 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;font-size:0.75rem;color:rgba(255,255,255,0.35);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .footer-bottom a{color:rgba(255,255,255,0.35);}
 
-@media(max-width:860px){
-  .two-col,.featured-inner{grid-template-columns:1fr;gap:32px;}
-  .programm-col{position:static;}
-}
-@media(max-width:600px){
-  .wrap{padding:0 20px;}
-  .site-nav{padding:0 20px;}
-  .person-inner{grid-template-columns:1fr;}
-  .footer-inner{grid-template-columns:1fr;}
-  .book-entry{grid-template-columns:80px 1fr;gap:20px;}
-  .book-cover{width:80px;height:114px;}
-}
+@media(max-width:860px){.two-col,.featured-inner{grid-template-columns:1fr;gap:32px;}.programm-col{position:static;}}
+@media(max-width:600px){.wrap{padding:0 20px;}.site-nav{padding:0 20px;}.person-inner{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}.book-entry{grid-template-columns:80px 1fr;gap:20px;}.book-cover{width:80px;height:114px;}}
 </style>
 </head>
 <body>
@@ -159,8 +130,7 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
 <div class="site-nav-wrap">
   <div class="site-nav">
     <a href="index.html" class="site-nav-logo">
-      <img src="https://github.com/piafrey/frey-assets/blob/main/FREY-Logo-nur.png?raw=true" alt="FREY Verlag"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <img src="https://github.com/piafrey/frey-assets/blob/main/FREY-Logo-nur.png?raw=true" alt="FREY Verlag" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
       <span class="logo-fallback" style="display:none;">FREY</span>
     </a>
   </div>
@@ -170,11 +140,10 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
 <section class="hero">
   <div class="wrap">
     <div class="hero-logo">
-      <img src="https://github.com/piafrey/frey-assets/blob/main/FREY%20Verlag%20Logo-01.png?raw=true" alt="FREY Verlag"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <img src="https://github.com/piafrey/frey-assets/blob/main/FREY%20Verlag%20Logo-01.png?raw=true" alt="FREY Verlag" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
       <div class="logo-fallback">FREY</div>
     </div>
-    <p class="hero-statement">Wir glauben, dass die Welt nicht einfacher wird, wenn wir sie vereinfachen. Uns interessieren Bücher, die Perspektiven verschieben und die Elastizität unserer Köpfe und Herzen trainieren. Die zeigen, dass Menschen und Dinge fast immer komplexer sind, als sie zunächst erscheinen. Und dass genau darin ihre Schönheit liegt.</p>
+    <div class="hero-statement"><p>Wir <span class="ph" id="p1"><span class="ann">glauben,<svg class="asv" style="top:-12px;left:-14px;width:calc(100% + 28px);height:calc(100% + 24px);" viewBox="0 0 300 100" preserveAspectRatio="none"><path class="ap" id="oval" d="M26,55 C20,22 44,2 84,1 C124,0 172,-4 212,7 C248,16 286,24 290,56 C294,84 268,96 226,98 C184,100 136,104 92,98 C48,92 14,80 26,55" style="--l:820;stroke-width:3;"/></svg></span> dass </span><span class="ph" id="p2">die Welt <span class="ann">nicht einfacher<svg class="asv" style="bottom:-16px;left:0;width:100%;height:24px;"><path class="ap" id="squig" d="M0,12 Q9,2 18,13 Q25,22 34,11 Q42,2 52,13 Q59,22 68,10 Q77,1 87,13 Q94,22 103,10 Q112,1 122,13 Q129,22 138,10 Q147,1 157,13 Q164,22 173,10 Q182,1 192,13 Q199,22 208,10 Q217,1 227,13 Q234,22 243,10 Q252,1 262,13 Q269,22 278,10 Q287,1 297,13 Q304,22 313,10 Q322,1 332,13 Q339,22 348,10 Q357,1 367,13 Q374,22 383,10 Q392,1 402,13 Q409,22 418,10 Q427,1 437,13 Q444,22 453,10" style="--l:960;stroke-width:2.8;"/></svg></span> wird, </span><span class="ph" id="p3">wenn wir sie <span class="ann">vereinfachen.<svg class="asv" style="top:50%;left:-3px;transform:translateY(-50%);width:calc(100% + 6px);height:18px;"><line class="ap" id="strike" x1="0" y1="9" x2="100%" y2="10" style="--l:420;stroke-width:4;"/></svg></span> </span><span class="ph" id="p4">Uns interessieren Bücher, </span><span class="ph" id="p5">die Perspektiven verschieben </span><span class="ph" id="p6">und die <span class="ann">Elastizität<svg class="asv" style="bottom:-13px;left:0;width:100%;height:16px;overflow:hidden;"><path class="ap" id="elast" d="M2,9 C50,8 115,10 195,9" style="--l:195;stroke-width:3.5;stroke-linecap:round;"/></svg></span> unserer <span class="ann">Köpfe<svg class="asv" style="top:-4px;right:calc(100% + 6px);width:14px;height:calc(100% + 18px);overflow:visible;"><path d="M7,2 C7.5,9 7.2,17 6.8,27" stroke="#0602FF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-dasharray="27" stroke-dashoffset="27"><animate attributeName="stroke-dashoffset" from="27" to="0" dur="0.45s" begin="7.7s" fill="freeze"/></path><ellipse cx="7" cy="37" rx="3.2" ry="3.2" fill="#0602FF" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.15s" begin="8.15s" fill="freeze"/></ellipse></svg><svg class="asv" style="bottom:-12px;left:0;width:100%;height:16px;overflow:hidden;"><path class="ap" id="koepfe-line" d="M2,9 C28,8 60,10 104,9" style="--l:104;stroke-width:3;stroke-linecap:round;"/></svg></span> </span><span class="ph" id="p7">und <span class="ann">Herzen<svg class="asv" style="bottom:-12px;left:0;width:100%;height:16px;overflow:hidden;"><path class="ap" id="herzen-line" d="M2,9 C38,10 82,8 136,9" style="--l:136;stroke-width:3;stroke-linecap:round;"/></svg></span> trainieren. </span><span class="ph" id="p8">Die zeigen, dass Menschen und Dinge </span><span class="ph" id="p9">fast immer komplexer sind, als sie zunächst erscheinen. </span><span class="ph b" id="p10">Und dass genau darin ihre Schönheit liegt.</span></p></div>
   </div>
 </section>
 
@@ -183,19 +152,25 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
   <div class="wrap">
     <div class="featured-inner">
       <div class="featured-cover">
-        <img src="https://github.com/piafrey/frey-assets/blob/main/buchcover.png?raw=true" alt="Das geht ja DOCH! Cover" style="filter:blur(22px);transform:scale(1.15);" onerror="this.style.display='none';">
+        <img src="https://github.com/piafrey/frey-assets/blob/main/buchcover.png?raw=true" alt="Das geht ja DOCH!" style="filter:blur(22px);transform:scale(1.15);" onerror="this.style.display='none';">
         Cover
       </div>
       <div>
         <div class="featured-label">Herbst 2026</div>
-        <h2 class="featured-title">Das geht ja DOCH!</h2>
+        <h2 class="featured-title">Das geht ja DOCH!<svg style="display:inline-block;width:68px;vertical-align:middle;margin-left:10px;overflow:visible;" viewBox="0 0 68 56">
+          <path d="M10,3 C10.5,11 9.6,20 8.8,30" stroke="#0602FF" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="30"><animate attributeName="stroke-dashoffset" from="30" to="0" dur="0.38s" begin="0.2s" fill="freeze"/></path>
+          <ellipse cx="9" cy="40" rx="3" ry="3.5" fill="#0602FF" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="0.58s" fill="freeze"/></ellipse>
+          <path d="M33,1 C33.8,9 33.4,18 32.5,29" stroke="#0602FF" stroke-width="4.2" fill="none" stroke-linecap="round" stroke-dasharray="30" stroke-dashoffset="30"><animate attributeName="stroke-dashoffset" from="30" to="0" dur="0.32s" begin="0.55s" fill="freeze"/></path>
+          <ellipse cx="32.8" cy="40" rx="3.8" ry="3.8" fill="#0602FF" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="0.87s" fill="freeze"/></ellipse>
+          <path d="M57,4 C58.5,11 58.8,21 57.8,32" stroke="#0602FF" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="31" stroke-dashoffset="31"><animate attributeName="stroke-dashoffset" from="31" to="0" dur="0.4s" begin="0.88s" fill="freeze"/></path>
+          <ellipse cx="57.5" cy="43" rx="2.8" ry="3" fill="#0602FF" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="1.28s" fill="freeze"/></ellipse>
+        </svg></h2>
         <p class="featured-subtitle">Wahre Geschichten vom Trotzdem-Machen</p>
         <div class="featured-desc">
           <p>„Das geht ja DOCH!" ist aus einer Überzeugung entstanden: Wir sind zu viel mehr fähig, als wir zunächst glauben.</p>
-          <p>Mit dieser Überzeugung erreicht die Bildungs-Influencerin und Autorin Caroline von St. Ange (@learnlearning.withcaroline) täglich Hunderttausende Menschen. Für dieses Buch rief Caroline ihre Instagram-Community dazu auf, von den Momenten zu erzählen, in denen sie scheinbar Unmögliches geschafft haben. Hunderte Menschen schrieben ihr. Gemeinsam mit ihrer Co-Autorin Pia Frey führte Caroline Dutzende Gespräche mit den Menschen hinter den Zuschriften. Daraus entstanden die 23 Geschichten dieses Buches.</p>
+          <p>Mit dieser Überzeugung erreicht die Bildungs-Influencerin und Autorin Caroline von St. Ange täglich Hunderttausende Menschen. Für dieses Buch rief Caroline ihre Instagram-Community dazu auf, von den Momenten zu erzählen, in denen sie scheinbar Unmögliches geschafft haben. Daraus entstanden die 23 Geschichten dieses Buches.</p>
           <p>Ein Mädchen lernt nach einer Lähmung wieder laufen. Der Profi-Traum eines Nachwuchsfußballers platzt – und trotzdem findet er seinen Platz im Fußball. Eine junge Frau gilt als völlig ungeeignet für eine Flugausbildung und wird Pilotin. Ein Mädchen flieht vor dem Krieg, steht vor dem Nichts – und verwirklicht den Traum, den sie schon als Kind hatte.</p>
-          <p>Kein Buch über außergewöhnliche Talente, sondern über außergewöhnliche Beharrlichkeit. Keine Erfolgsformeln, sondern wahre Geschichten, die zeigen, wie viel größer unser Handlungsspielraum oft ist, als wir zunächst glauben.</p>
-          <p>Mit einem Vorwort von Saša Stanišić.</p>
+          <p>Kein Buch über außergewöhnliche Talente, sondern über außergewöhnliche Beharrlichkeit. Mit einem Vorwort von Saša Stanišić.</p>
         </div>
         <div class="featured-meta">
           <div class="featured-meta-item"><strong>1. November 2026</strong>Erscheinungstermin</div>
@@ -230,25 +205,35 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
   <div class="two-col">
     <div class="section-label">FREYgeister</div>
     <div>
-      <h2 style="font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;letter-spacing:-0.02em;line-height:1.05;margin-bottom:24px;">Der Beirat</h2>
+      <div style="position:relative;display:inline-block;margin-bottom:24px;">
+        <h2 style="font-size:clamp(2.2rem,4vw,3.4rem);font-weight:800;letter-spacing:-0.02em;line-height:1.05;">Der Beirat</h2>
+        <svg style="position:absolute;top:-10px;right:-80px;width:72px;height:52px;overflow:visible;pointer-events:none;" viewBox="0 0 72 52">
+          <!-- ✳ 1 klein -->
+          <path d="M10,14 C10,17 10,22 10,28 M4,17 C7,19 9,21 17,25 M17,17 C14,19 11,21 3,25" stroke="#0602FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="50" stroke-dashoffset="50">
+            <animate attributeName="stroke-dashoffset" from="50" to="0" dur="0.65s" begin="0.8s" fill="freeze"/>
+          </path>
+          <!-- ✳ 2 größer -->
+          <path d="M36,8 C36,13 36,19 36,30 M27,13 C30,16 33,19 45,24 M45,13 C42,16 39,19 27,24" stroke="#0602FF" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-dasharray="64" stroke-dashoffset="64">
+            <animate attributeName="stroke-dashoffset" from="64" to="0" dur="0.7s" begin="1.15s" fill="freeze"/>
+          </path>
+          <!-- ✳ 3 klein -->
+          <path d="M62,18 C62,21 62,24 62,32 M56,20 C58,22 61,24 68,28 M68,20 C66,22 63,24 56,28" stroke="#0602FF" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-dasharray="44" stroke-dashoffset="44">
+            <animate attributeName="stroke-dashoffset" from="44" to="0" dur="0.6s" begin="1.45s" fill="freeze"/>
+          </path>
+        </svg>
+      </div>
       <p class="beirat-intro">FREY wird von unabhängigen Persönlichkeiten aus dem Medien-, Kultur- und Literaturumfeld begleitet, die den Aufbau des Verlags strategisch und publizistisch unterstützen.</p>
       <div class="beirat-grid">
         <div class="beirat-card">
-          <div class="beirat-avatar">
-            <img src="https://github.com/piafrey/frey-assets/blob/main/Beirat%201%20Matze%20Hielscher.jpg?raw=true" alt="Matze Hielscher" style="object-position:42% 50%;" onerror="this.style.display='none';">
-          </div>
+          <div class="beirat-avatar"><img src="https://github.com/piafrey/frey-assets/blob/main/Beirat%201%20Matze%20Hielscher.jpg?raw=true" alt="Matze Hielscher" style="object-position:42% 50%;" onerror="this.style.display='none';"></div>
           <div class="beirat-card-info"><h4>Matze Hielscher</h4><p>Mitgründer Mit Vergnügen,<br>Podcaster & Autor</p></div>
         </div>
         <div class="beirat-card">
-          <div class="beirat-avatar">
-            <img src="https://github.com/piafrey/frey-assets/blob/main/beirat%202%20Anna%20von%20Muenchhause.jpg?raw=true" alt="Anna von Münchhausen" onerror="this.style.display='none';">
-          </div>
+          <div class="beirat-avatar"><img src="https://github.com/piafrey/frey-assets/blob/main/beirat%202%20Anna%20von%20Muenchhause.jpg?raw=true" alt="Anna von Münchhausen" onerror="this.style.display='none';"></div>
           <div class="beirat-card-info"><h4>Anna von Münchhausen</h4><p>Textchefin DIE ZEIT a.D.</p></div>
         </div>
         <div class="beirat-card">
-          <div class="beirat-avatar">
-            <img src="https://raw.githubusercontent.com/piafrey/frey-assets/refs/heads/main/Beirat-3-Daniel-Schreiber.jpg" alt="Daniel Schreiber" style="object-position:center 20%;" onerror="this.style.display='none';">
-          </div>
+          <div class="beirat-avatar"><img src="https://raw.githubusercontent.com/piafrey/frey-assets/refs/heads/main/Beirat-3-Daniel-Schreiber.jpg" alt="Daniel Schreiber" style="object-position:center 42%;transform:scale(2.5);" onerror="this.style.display='none';"></div>
           <div class="beirat-card-info"><h4>Daniel Schreiber</h4><p>Autor</p></div>
         </div>
         <div class="beirat-card">
@@ -267,7 +252,7 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
 <!-- ERSTE AUTORIN -->
 <div class="wrap">
   <div class="two-col">
-    <div class="section-label">Erste Autorin</div>
+    <div class="section-label">Erste Autorin <svg style="display:inline-block;width:10px;height:32px;vertical-align:-6px;overflow:visible;" viewBox="0 0 14 42"><path d="M7,2 C7.5,7 7.5,13 7,23" stroke="#0602FF" stroke-width="3" fill="none" stroke-linecap="round"><animate attributeName="stroke-dashoffset" from="24" to="0" dur="0.4s" begin="0.6s" fill="freeze"/></path><circle cx="7" cy="36" r="3.5" fill="#0602FF" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.2s" begin="1s" fill="freeze"/></circle></svg></div>
     <div class="person-inner">
       <div class="avatar">
         <img src="https://raw.githubusercontent.com/piafrey/frey-assets/refs/heads/main/Caroline%20von%20St.%20Ange%20.avif" alt="Caroline von St. Ange" style="object-position:center;" onerror="this.style.display='none';">
@@ -288,15 +273,10 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
   <div class="two-col">
     <div class="section-label programm-col">Programmvorschau</div>
     <div>
-
       <div class="season">
         <div class="season-title">Sommer / Herbst 2026</div>
-
         <div class="book-entry">
-          <div class="book-cover">
-            <img src="https://github.com/piafrey/frey-assets/blob/main/Screenshot%202026-06-18%20at%2016.09.31.png?raw=true" alt="Cover So startet dein Kind" onerror="this.style.display='none';">
-            Cover
-          </div>
+          <div class="book-cover"><img src="https://github.com/piafrey/frey-assets/blob/main/Screenshot%202026-06-18%20at%2016.09.31.png?raw=true" alt="Cover" onerror="this.style.display='none';">Cover</div>
           <div class="book-meta">
             <div class="author">Caroline von St. Ange</div>
             <h3>So startet dein Kind gut in die Schule</h3>
@@ -308,12 +288,8 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
             </div>
           </div>
         </div>
-
         <div class="book-entry">
-          <div class="book-cover">
-            <img src="https://github.com/piafrey/frey-assets/blob/main/buchcover.png?raw=true" alt="Das geht ja DOCH!" style="filter:blur(22px);transform:scale(1.15);" onerror="this.style.display='none';">
-            Cover
-          </div>
+          <div class="book-cover"><img src="https://github.com/piafrey/frey-assets/blob/main/buchcover.png?raw=true" alt="Das geht ja DOCH!" style="filter:blur(22px);transform:scale(1.15);" onerror="this.style.display='none';">Cover</div>
           <div class="book-meta">
             <div class="author">Caroline von St. Ange & Pia Frey</div>
             <h3>Das geht ja DOCH!</h3>
@@ -326,12 +302,8 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
             </div>
           </div>
         </div>
-
         <div class="book-entry">
-          <div class="book-cover">
-            <img src="https://github.com/piafrey/Berlin-o-mat/blob/main/cover.png?raw=true" alt="Berlin zum Ausflippen" style="filter:blur(22px);transform:scale(1.15);" onerror="this.style.display='none';">
-            Cover
-          </div>
+          <div class="book-cover"><img src="https://github.com/piafrey/Berlin-o-mat/blob/main/cover.png?raw=true" alt="Berlin zum Ausflippen" style="filter:blur(22px);transform:scale(1.15);" onerror="this.style.display='none';">Cover</div>
           <div class="book-meta">
             <div class="author">Mit dem Tagesspiegel</div>
             <h3>Berlin zum Ausflippen</h3>
@@ -344,12 +316,10 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
             <a href="https://piafrey.github.io/Berlin-o-mat/" target="_blank" rel="noopener noreferrer" class="book-link">Hier testen</a>
           </div>
         </div>
-
       </div>
 
       <div class="season">
         <div class="season-title">Frühjahr 2027</div>
-
         <div class="book-entry">
           <div class="book-cover">Cover</div>
           <div class="book-meta">
@@ -358,28 +328,25 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
             <p class="desc">330 Karten voller aufbauender Botschaften, die immer zur Stelle sind, wenn das Lernen schwerfällt oder die Motivation schwindet. Entstanden in Zusammenarbeit mit der Instagram Community der Autorin.</p>
           </div>
         </div>
-
         <div class="book-entry">
           <div class="book-cover">Cover</div>
           <div class="book-meta">
             <div class="author">Ein Flipbuch mit Peter Wittkamp</div>
             <h3>Der Kollaps-o-Mat</h3>
-            <p class="desc">Die Apokalypse im Taschenformat: Kriege, Klima, KI: Der große Crash droht von allen Seiten. Ein kathartisches Flipbuch für apokalyptische Zeiten, mit dem sich im Handumdrehen immer neue Weltuntergänge zusammenstellen lassen – von erschreckend plausibel bis vollkommen absurd.</p>
+            <p class="desc">Die Apokalypse im Taschenformat: Kriege, Klima, KI: Der große Crash droht von allen Seiten. Ein kathartisches Flipbuch für apokalyptische Zeiten, mit dem sich im Handumdrehen immer neue Weltuntergänge zusammenstellen lassen.</p>
             <a href="https://piafrey.github.io/kollapsomat/" target="_blank" rel="noopener noreferrer" class="book-link">Hier kollabieren</a>
           </div>
         </div>
-
       </div>
 
       <div class="season">
         <div class="season-title">Herbst 2027</div>
-
         <div class="book-entry">
           <div class="book-cover">Cover</div>
           <div class="book-meta">
             <div class="author">Reihenstart</div>
             <h3>Crashkurs mit Klassikern</h3>
-            <p class="desc">Eine Sachbuchreihe, die aktuelle Phänomene unserer Zeit mithilfe klassischer philosophischer Modelle neu betrachtet. Große Denker erklären die Gegenwart:</p>
+            <p class="desc">Eine Sachbuchreihe, die aktuelle Phänomene unserer Zeit mithilfe klassischer philosophischer Modelle neu betrachtet.</p>
             <div class="book-tags">
               <span class="book-tag">Wittgenstein erklärt LLMs</span>
               <span class="book-tag">Heidegger erklärt KI</span>
@@ -390,9 +357,7 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   </div>
 </div>
@@ -426,5 +391,19 @@ footer{background:var(--black);color:var(--white);padding:64px 0 40px;}
   </div>
 </footer>
 
+<script>
+(function(){
+  const ph=['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'];
+  const an=['oval','squig','strike'];
+  const dl=[200,650,1120,1680,2120,2620,3060,3560,4120,4700];
+  ph.forEach((id,i)=>setTimeout(()=>{const e=document.getElementById(id);if(e)e.classList.add('vis');},dl[i]));
+  setTimeout(()=>document.getElementById('oval')?.classList.add('drawn'),5400);
+  setTimeout(()=>document.getElementById('squig')?.classList.add('drawn'),6100);
+  setTimeout(()=>document.getElementById('strike')?.classList.add('drawn'),6700);
+  setTimeout(()=>document.getElementById('elast')?.classList.add('drawn'),7200);
+  setTimeout(()=>document.getElementById('koepfe-line')?.classList.add('drawn'),7700);
+  setTimeout(()=>document.getElementById('herzen-line')?.classList.add('drawn'),8100);
+})();
+</script>
 </body>
 </html>
