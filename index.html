@@ -356,6 +356,13 @@ a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
 /* Footer */
 .foot{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--paper);color:var(--blue);font-family:var(--sans);font-size:14px;letter-spacing:.04em;padding:22px max(clamp(20px,4vw,70px),env(safe-area-inset-right,0px)) 26px max(clamp(20px,4vw,70px),env(safe-area-inset-left,0px));box-shadow:inset 0 clamp(3px,.31vw,6px) 0 var(--blue)}
 .foot a{color:var(--blue);text-decoration:none;border-bottom:1px solid currentColor}
+
+/* Shop-Buttons DOCH */
+.shops{display:flex;flex-wrap:wrap;align-items:center;gap:10px calc(14*var(--u));margin:calc(22*var(--u)) 0 0}
+.shops-l{font-family:var(--sans2);font-size:max(13px,calc(18*var(--u)));color:var(--blue);margin-right:calc(10*var(--u))}
+.shops a{font-family:var(--sans2);font-weight:500;font-size:max(13px,calc(19*var(--u)));color:var(--blue);text-decoration:none;border:max(1.5px,calc(2*var(--u))) solid var(--blue);border-radius:999px;padding:.35em 1.1em;line-height:1.2;transition:background .2s,color .2s}
+.shops a:hover,.shops a:focus-visible{background:var(--blue);color:#fff}
+@media (max-width:900px){.shops-l{flex-basis:100%;margin:0}.shops a{font-size:14px}}
 </style>
 </head>
 <body>
@@ -396,6 +403,7 @@ a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
         <p class="by">Caroline von St. Ange &amp; Pia Frey &nbsp;|&nbsp; Mit einem Vorwort von Saša Stanišić</p>
         <p class="body teaser">Kein Buch über außergewöhnliche Talente, sondern über außergewöhnliche Beharrlichkeit.</p>
         <p class="meta"><span>Erscheinungstermin: 2. November 2026</span><span>Preis: 21,00 €</span><span>ISBN: 978-3-9828953-1-4</span></p>
+        <p class="shops"><span class="shops-l">Jetzt erhältlich bei</span><a href="https://www.thalia.de/shop/home/artikeldetails/A1080670271" target="_blank" rel="noopener">Thalia</a><a href="https://www.amazon.de/dp/3982895316" target="_blank" rel="noopener">Amazon</a><a href="https://www.hugendubel.de/de/buch_gebunden/caroline_von_st_ange_pia_frey-das_geht_ja_doch_-53788567-produkt-details.html" target="_blank" rel="noopener">Hugendubel</a><a href="https://www.kulturkaufhaus.de/de/detail/ISBN-9783982895314/St.-Ange-Caroline-von/Das-geht-ja-DOCH" target="_blank" rel="noopener">Dussmann</a></p>
       </div>
     </div>
   </section>
